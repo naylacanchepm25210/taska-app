@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TASKA PRO</title><meta name="theme-color" content="#3b1a9e">
+<title>TASKA PRO</title><meta name="theme-color" content="#3b1a9e"><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes">
 <style>
 :root{--bg:#0d1020;--card:#1a1f36;--card2:#232945;--line:#343c63;--txt:#f1f4ff;--mut:#9aa4cf;--pri:#9b4dff;--pri2:#5b2bd9;--ok:#2ecc8f;--warn:#ffb020;--bad:#ff5470}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -388,6 +388,7 @@ document.addEventListener('change',e=>{
 document.addEventListener('keydown',e=>{if(e.key==='Enter'&&!document.querySelector('#modal.show')){const t=e.target;if(t.id==='pw'||t.id==='em'){if(V.auth==='login')doLogin()}else if(t.id==='chat')A.send()}});
 window.addEventListener('hashchange',checkJoinHash);
 render();checkJoinHash();reminders(false);
+try{if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{})}catch(e){}
 </script>
 </body>
 </html>
